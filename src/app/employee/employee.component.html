@@ -1,0 +1,18 @@
+<div class="form-group">
+  <label for="filter">Search By Name</label>
+<input id="filter" name="filter" type="text" class="form-control" [(ngModel)]="searchTem">
+<button (click)="changeName()" class="btn btn-alert">change Name</button>
+<button (click)="cancelRequest()" [disabled]="subscription.closed" class="btn btn-warning pull-right">Cancel Reqest</button>
+</div>
+<div class="form-group">
+  <label class="help-box">{{title}}</label>
+  <h3 #titleRef></h3>
+</div>
+<div class="form-group" *ngIf="!employees">
+  {{message}}
+</div>
+<div *ngFor="let emp of employees | employeeFilter :searchTem " >
+  <div style="border: 1px solid black" (click)="titleRef.innerHTML= childComponent.getEmployeeName()">
+  <app-show-employee [employee]="emp" (selectedEmployeeName)="handleChildComponentNotification($event)" #childComponent></app-show-employee>
+  </div>
+</div>
