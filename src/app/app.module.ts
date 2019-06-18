@@ -12,6 +12,9 @@ import { AddBorderColorDirective } from './employee/add-border-color.directive';
 import { ShowEmployeeComponent } from './employee/show-employee/show-employee.component';
 import { EmployeeDataService } from './employee/employee-data.service';
 import {HttpClientModule} from '@angular/common/http';
+import { CreateEmployeeComponent } from './employee/create-employee/create-employee.component';
+import { PageNotFoundComponent } from './page-not-found.component';
+import { EmployeeDetailsComponent } from './employee/show-employee/employee-details/employee-details.component';
 
 
 @NgModule({
@@ -21,7 +24,10 @@ import {HttpClientModule} from '@angular/common/http';
     EmployeeComponent,
     EmployeeFilterPipe,
     AddBorderColorDirective,
-    ShowEmployeeComponent
+    ShowEmployeeComponent,
+    CreateEmployeeComponent,
+    PageNotFoundComponent,
+    EmployeeDetailsComponent
   ],
   imports: [
     BrowserModule,

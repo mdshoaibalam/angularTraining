@@ -4,14 +4,14 @@
           <a class="navbar-brand" href="#">WebSiteName</a>
       </div>
       <ul class="nav navbar-nav">
-          <li class="active">
+          <li>
               <a href="#">Home</a>
           </li>
-          <li>
-              <a href="#">Page 1</a>
+          <li routerLinkActive="active">
+              <a routerLink="employees">Employee List</a>
           </li>
-          <li>
-              <a href="#">Page 2</a>
+          <li routerLinkActive="active">
+              <a routerLink="createEmployee">Create Employee</a>
           </li>
           <li>
               <a href="#">Page 3</a>
@@ -19,7 +19,6 @@
       </ul>
   </div>
 </nav>
-<div class="container"> 
-  <app-employee></app-employee>
+<div class="container">   
   <router-outlet></router-outlet>
 </div>

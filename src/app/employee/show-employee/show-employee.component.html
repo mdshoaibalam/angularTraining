@@ -1,6 +1,6 @@
 <div class="panel panel-primary" (click)="handleClick()">
   <div class="panel-heading">
-    <h3 class="panel-title">{{employee.name | uppercase }}</h3>
+    <h3 class="panel-title"><a [routerLink]="['/employees/',employee.id,'details']">{{employee.name | uppercase }}</a></h3>
   </div>
   <div class="panel-body">
 
