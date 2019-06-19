@@ -5,38 +5,38 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import {AppHome} from "./home.component";
-import { EmployeeComponent } from './employee/employee.component';
-import { FormsModule} from "@angular/forms";
-import { EmployeeFilterPipe } from './employee/employee-filter.pipe';
-import { AddBorderColorDirective } from './employee/add-border-color.directive';
-import { ShowEmployeeComponent } from './employee/show-employee/show-employee.component';
+import { FormsModule,ReactiveFormsModule} from "@angular/forms";
+
 import { EmployeeDataService } from './employee/employee-data.service';
 import {HttpClientModule} from '@angular/common/http';
-import { CreateEmployeeComponent } from './employee/create-employee/create-employee.component';
 import { PageNotFoundComponent } from './page-not-found.component';
-import { EmployeeDetailsComponent } from './employee/show-employee/employee-details/employee-details.component';
+import { CanDeActivateGuardService } from './employee/can-de-activate-guard.service';
+import { LoginComponent } from './login.component';
+import { HomeComponent } from './home/home.component';
+//import { EmployeeModule } from './employee.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AppHome,
-    EmployeeComponent,
-    EmployeeFilterPipe,
-    AddBorderColorDirective,
-    ShowEmployeeComponent,
-    CreateEmployeeComponent,
+   
     PageNotFoundComponent,
-    EmployeeDetailsComponent
+    
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
+   // EmployeeModule,
     AppRoutingModule,
     FormsModule,
+    
+    ReactiveFormsModule,
     HttpClientModule,
     BsDatepickerModule.forRoot()
   ],
-  providers: [EmployeeDataService],
+  providers: [EmployeeDataService,CanDeActivateGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

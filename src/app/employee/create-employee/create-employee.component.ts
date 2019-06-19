@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IEmployee } from '../employee.model';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-create-employee',
@@ -8,9 +9,21 @@ import { IEmployee } from '../employee.model';
 })
 export class CreateEmployeeComponent implements OnInit {
   employee:IEmployee;
+  @ViewChild('createEmployee') public createEmployee:NgForm;
   constructor() { }
 
   ngOnInit() {
+    this.employee = {
+      id:null,
+      name:null,
+      email:null,
+      gender:null,
+      dateOfBirth:null,
+      photoPath:null
+    }
+  }
+  saveEmployee(){
+    console.log(this.employee);
   }
 
 }

@@ -1,4 +1,4 @@
-<form #createEmployee="ngForm">
+<form #createEmployee="ngForm" (ngSubmit)="saveEmployee(createEmployee)">
 <div class="panel panel-primary" >
   <div class="panel-heading">
     <h3 class="panel-title">Create Employee</h3>
@@ -10,13 +10,22 @@
     </div>
     <div class="form-group">
       <label for="email">Email</label>
-      <input type="text" class="form-control" id="email" name="email" [(ngModel)]="employee" />
+      <input type="text" class="form-control" id="email" name="email" [(ngModel)]="email" />
+    </div>
+
+    <div class="form-group">
+      <label for="dateOfBirth">Date of Birth</label>
+      <input type="text" class="form-control" bsDatepicker id="dateOfBirth" name="dateOfBirth" [(ngModel)]="dateOfBirth" />
     </div>
 
     <div>
       template form {{createEmployee.value | json}}
      <div>
-      custom form {{employee}}
+      custom form {{employee | json}}
+     </div>
+
+     <div class="form-group">
+      <button class="btn btn-warning" >Save</button>
      </div>
     </div>
   </div>
